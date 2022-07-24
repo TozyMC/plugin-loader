@@ -5,13 +5,6 @@ plugins {
     alias(libs.plugins.indra.publishing.sonatype)
 }
 
-val projectVersion: String by rootProject
-val projectDescription: String by rootProject
-
-group = "com.github.tozymc"
-version = projectVersion
-description = projectDescription
-
 indra {
     javaVersions {
         minimumToolchain(17)
@@ -43,5 +36,6 @@ dependencies {
     compileOnlyApi(libs.jetbrains.annotations)
 
     api(libs.slf4j)
-    api(libs.guava)
+
+    implementation(libs.json)
 }
