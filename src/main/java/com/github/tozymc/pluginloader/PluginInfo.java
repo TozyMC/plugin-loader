@@ -2,13 +2,12 @@ package com.github.tozymc.pluginloader;
 
 import java.nio.file.Path;
 import java.util.Optional;
-import org.intellij.lang.annotations.Pattern;
+import java.util.regex.Pattern;
 import org.jetbrains.annotations.NotNull;
 
 public interface PluginInfo {
-  java.util.regex.Pattern ID_PATTERN = java.util.regex.Pattern.compile("[a-z][a-z0-9-_]{0,63}");
+  Pattern ID_PATTERN = Pattern.compile("[a-z][a-z0-9-_]{0,63}");
 
-  @Pattern("[a-z][a-z0-9-_]{0,63}")
   @NotNull String id();
 
   @NotNull Path source();
@@ -28,15 +27,14 @@ public interface PluginInfo {
   @NotNull Libraries libraries();
 
   interface Dependency {
-    @Pattern("[a-z][a-z0-9-_]{0,63}")
     @NotNull String id();
 
     boolean optional();
   }
 
   interface Libraries {
-    java.util.regex.Pattern COORDINATE_PATTERN = java.util.regex.Pattern.compile(
-        "([^: ]+):([^: ]+)(:([^: ]*)(:([^: ]+))?)?:([^: ]+)");
+    Pattern COORDINATE_PATTERN =
+        Pattern.compile("([^: ]+):([^: ]+)(:([^: ]*)(:([^: ]+))?)?:([^: ]+)");
 
     @NotNull Iterable<String> repositories();
 
