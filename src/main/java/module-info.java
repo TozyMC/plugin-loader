@@ -1,6 +1,8 @@
 module com.github.tozymc.pluginloader {
   requires static transitive org.jetbrains.annotations;
 
+  requires transitive com.google.gson;
+
   requires org.slf4j;
 
   exports com.github.tozymc.pluginloader;

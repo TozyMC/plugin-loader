@@ -37,5 +37,5 @@ dependencies {
 
     api(libs.slf4j)
 
-    implementation(libs.json)
+    implementation(libs.gson)
 }
