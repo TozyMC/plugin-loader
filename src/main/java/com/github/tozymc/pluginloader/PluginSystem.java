@@ -1,6 +1,6 @@
 package com.github.tozymc.pluginloader;
 
-import com.github.tozymc.pluginloader.instance.InstanceRegistry;
+import com.github.tozymc.pluginloader.instance.InstanceProviderRegistry;
 import java.nio.file.Path;
 import java.util.Collection;
 import java.util.Optional;
@@ -24,7 +24,7 @@ public interface PluginSystem {
 
   @NotNull @UnmodifiableView Collection<PluginContainer> plugins();
 
-  @NotNull InstanceRegistry instanceRegistry();
+  @NotNull InstanceProviderRegistry instanceProviderRegistry();
 
   @NotNull Path pluginsDirectory();
 }
