@@ -43,4 +43,5 @@ dependencies {
     compileOnlyApi(libs.jetbrains.annotations)
 
     api(libs.slf4j)
+    api(libs.guava)
 }
