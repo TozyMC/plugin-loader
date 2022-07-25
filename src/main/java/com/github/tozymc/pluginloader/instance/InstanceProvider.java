@@ -22,7 +22,7 @@ public interface InstanceProvider<T> {
   static <T, P> @NotNull InstanceProvider<T> fromPluginFunction(
       @NotNull Function<@Nullable P, ? extends T> mapping) {
     //noinspection unchecked
-    return container -> mapping.apply((P) container.plugin().orElse(null));
+    return container -> mapping.apply((P) container.plugin().orElseThrow());
   }
 
   @NotNull T get(@NotNull PluginContainer container);
