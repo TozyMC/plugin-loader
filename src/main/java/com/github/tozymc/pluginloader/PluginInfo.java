@@ -22,7 +22,7 @@ public interface PluginInfo {
 
   @NotNull Iterable<String> authors();
 
-  @NotNull Iterable<Dependency> dependencies();
+  @NotNull Iterable<? extends Dependency> dependencies();
 
   @NotNull Libraries libraries();
 
@@ -33,9 +33,6 @@ public interface PluginInfo {
   }
 
   interface Libraries {
-    Pattern COORDINATE_PATTERN =
-        Pattern.compile("([^: ]+):([^: ]+)(:([^: ]*)(:([^: ]+))?)?:([^: ]+)");
-
     @NotNull Iterable<String> repositories();
 
     @NotNull Iterable<String> artifacts();
